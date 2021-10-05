@@ -7,10 +7,9 @@ describe("String Calculator ", () => {
     });
   });
   
-  function sumar(stringNumbers){
+  function sumar(stringNumbers) {
     const numbers = stringNumbers
-        .replace('-', ',')
-        .split(',')
+        .split(/,|-/)
         .map(n => parseInt(n, 10))
     return numbers.reduce((s, n) => s + n)
   }
